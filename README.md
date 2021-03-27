@@ -1,3 +1,3 @@
 # Web-Projects
 
-All the projects are my semester's assignment!
+All the projects are my Web Programming assignments!
