@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>OpenWeatherMap Api</title>
+  
+</head>
+<body>
+<h1 style="text-align: center;font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;">Weather Checker</h1>
+  
+  <div class="input"style="text-align: center;font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;">
+      <input type="text" placeholder="Enter the city" class="input_text">
+      <input type="submit" value="Submit" class="submit">
+  </div>
+
+  <div class="container" style="text-align: center;font-family: Roboto;">
+    <div class="card">
+      <h1 class="name" id="name"></h1>
+      <p class="temp"></p>
+      <p class="clouds"></p>
+      <p class="desc"></p>
+    </div>
+  </div>
+  <script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("demo_test.txt");
+  });
+});
+</script>
+<script src="../javascript/app.js"></script>
+</body>
+</html>
