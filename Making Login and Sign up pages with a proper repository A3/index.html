@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign In</title>
+    <script>
+      // A custom function to set cookies
+    /*function setCookie(name, value, daysToLive) {
+        // Encode value in order to escape semicolons, commas, and whitespace
+        var cookie = name + "=" + encodeURIComponent(value);
+    
+        if(typeof daysToLive === "number") {
+             //Sets the max-age attribute so that the cookie expires
+            //after the specified number of days 
+            cookie += "; max-age=" + (daysToLive*24*60*60);
+    
+            document.cookie = cookie;
+        }
+    }*/
+    
+    // A custom function to get cookies
+    function getCookie(name) {
+        // Split cookie string and get all individual name=value pairs in an array
+        var cookieArr = document.cookie.split(";");
+    
+        // Loop through the array elements
+        for(var i = 0; i < cookieArr.length; i++) {
+            var cookiePair = cookieArr[i].split("=");
+    
+            /* Removing whitespace at the beginning of the cookie name
+            and compare it with the given string */
+            if(name == cookiePair[0].trim()) {
+                // Decode the cookie value and return
+                return decodeURIComponent(cookiePair[1]);
+            }
+        }
+    
+        // Return null if not found
+        return null;
+    }
+    
+    // A custom function to check cookies
+    function checkCookie() {
+        // Get cookie using our custom function
+        var firstName = getCookie("firstName");
+    
+        if(firstName != null) {
+            alert("Welcome again, " + firstName+"You are logged in");
+        } else {
+
+            //firstName = prompt("Please enter your first name:");
+            /*if(firstName != "" && firstName != null) {
+                // Set cookie using our custom function
+                setCookie("firstName", firstName, 1);
+            }*/
+        }
+    }
+    
+
+      
+      function validateForm(){  
+        var name=document.getElementById('username').value;
+        var pswd=document.getElementById('password').value;
+        if (name===""){  
+          alert("Name can't be blank");  
+          return false;  
+        }else if(pswd.length<6){  
+        alert("Password must be at least 6 characters long.");  
+        return false;  
+        } 
+      }  
+
+      function clickCounter() {
+  if(typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <p class="logo">Sign In Form</p>
+        <form
+          class="login-form"
+          method="POST"
+          action="signup.html"
+          onsubmit=""
+        >
+          <input
+            id="username"
+            type="text"
+            name="name"
+            placeholder="username"
+            autofocus="autofocus"
+          />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+
+          <input
+            type="submit"
+            value="Login"
+            onclick="return validateForm()"
+          />
+          <a id="new-user" href="signup.html">New User? Sign Up</a>
+          
+        </form><br><br><br>
+        <p><button class="new-session" onclick="clickCounter()" type="button">Click me for counting Session!</button></p>
+        <p>Session : <p id="result"></p></p>
+        <div>
+    </div>
+
+  </body>
+
+</html>
+<!--input button of submitt type thing
+  <onclick="validateForm(document.getElementById('username').value,document.getElementById('password').value)"-->
