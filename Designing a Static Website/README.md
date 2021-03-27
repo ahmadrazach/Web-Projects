@@ -1,6 +1,6 @@
-Goal:
+# Goal:
 Goal in this assignment is to make a Static website of your choice (Your website could be anything: any business, a favorite author or your favorite personality’s portfolio except politicians). 
-Your website must contain 5 pages at least: Some example pages are as follows:
+# Your website must contain 5 pages at least:
 •	Main page e.g. index, Must Contain lists, anchors (LinkedIn or GitHub account), Tables, Paragraphs.
 •	Map showing any location
 •	Gallery (For your photos)
