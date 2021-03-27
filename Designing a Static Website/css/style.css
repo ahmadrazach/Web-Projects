@@ -1,0 +1,56 @@
+
+   .topnav {
+    overflow: hidden;
+    background-color: #400DC1;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+      border-right: 1px solid #bbb;
+      }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: white;
+    color: #400DC1;
+  }
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  h1,li,a{
+    font-family:verdana;
+  }
+  h2{
+    font-family:courier;
+  }
+  div.gallery img {
+    width: 600px;
+    height:500px;
+    }
+  @media print {
+    div.gallery img {
+      width: 200px;
+      height:150px;
+      }
+      table, img, svg {
+        break-inside: avoid;
+      }
+    }
+    
